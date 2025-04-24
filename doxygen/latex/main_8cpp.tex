@@ -1,0 +1,53 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Główny punkt wejścia aplikacji monitorowania jakości powietrza.  
+
+
+{\ttfamily \#include $<$QGui\+Application$>$}\newline
+{\ttfamily \#include $<$QQml\+Application\+Engine$>$}\newline
+{\ttfamily \#include $<$QQml\+Context$>$}\newline
+{\ttfamily \#include "{}mainwindow.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Główna funkcja aplikacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Główny punkt wejścia aplikacji monitorowania jakości powietrza. 
+
+\begin{DoxyAuthor}{Author}
+Adam Fedorowicz 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/04-\/21
+\end{DoxyDate}
+Ten plik zawiera funkcję główną, która inicjalizuje aplikację Qt i konfiguruje silnik QML. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Główna funkcja aplikacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Liczba argumentów wiersza poleceń. \\
+\hline
+{\em argv} & Tablica argumentów wiersza poleceń. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kod wyjścia aplikacji.
+\end{DoxyReturn}
+Inicjalizuje aplikację Qt, tworzy instancję \doxylink{class_main_window}{Main\+Window}, konfiguruje kontekst QML i ładuje główny plik QML. Ładuje główny plik QML i obsługuje błędy ładowania.
+
+Połączenie sygnału object\+Created z funkcją sprawdzającą, czy obiekt QML został utworzony. Jeśli obiekt nie zostanie utworzony, aplikacja zakończy działanie z kodem błędu.

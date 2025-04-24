@@ -1,0 +1,360 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+Główna klasa zarządzająca aplikacją monitorowania jakości powietrza.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a058bf5d971fa40743b9945f1fc455089}{search\+City}} (const QString \&city)
+\begin{DoxyCompactList}\small\item\em Wyszukuje stacje w podanym mieście. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a837ddfe5aeaffc3064f27d40da64c8fe}{fetch\+Sensors}} (int station\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera sensory dla stacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a26f6552f8ca9950cf81c21df6bf11e50}{fetch\+Sensor\+Data}} (int sensor\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera dane dla sensora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a55ec17a9466c8b0252b4d42f41768a2e}{update\+Station\+Search\+Status}} (int station\+Id, bool is\+Searched)
+\begin{DoxyCompactList}\small\item\em Aktualizuje status wyszukiwania stacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a2923b075ce75e262c80f6051f2706faf}{remove\+Sensor\+Data}} (int sensor\+Id)
+\begin{DoxyCompactList}\small\item\em Usuwa dane dla sensora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7d5e272770a8904d4671d22b56480bb8}{save\+Station\+Data}} (int station\+Id, const QString \&city\+Name, const QString \&address)
+\begin{DoxyCompactList}\small\item\em Zapisuje dane stacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_af251f1eaca28140864dbd1d76097411d}{load\+Archived\+Station\+Data}} (int station\+Id, const QString \&save\+Date)
+\begin{DoxyCompactList}\small\item\em Ładuje zapisane dane stacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_window_aa00fe0a808c5ba84089e2147bf1e18af}\label{class_main_window_aa00fe0a808c5ba84089e2147bf1e18af} 
+void {\bfseries map\+Center\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się centrum mapy. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ad6d230c53c3628833a80896fa729c06a}\label{class_main_window_ad6d230c53c3628833a80896fa729c06a} 
+void {\bfseries stations\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się lista wyszukanych stacji. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ac5153bb04c8a2e0f6b585e3f8ba77b88}\label{class_main_window_ac5153bb04c8a2e0f6b585e3f8ba77b88} 
+void {\bfseries all\+Stations\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się lista wszystkich stacji. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a91c4b769235bc0aafc20ad7b2fb2a1e3}\label{class_main_window_a91c4b769235bc0aafc20ad7b2fb2a1e3} 
+void {\bfseries sensors\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się lista sensorów. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a0820b479930b8cf09badc3a8bf25618f}\label{class_main_window_a0820b479930b8cf09badc3a8bf25618f} 
+void {\bfseries sensor\+Data\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się dane sensorów. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_af63d0bdd203b1b2d04bb90c96493f617}\label{class_main_window_af63d0bdd203b1b2d04bb90c96493f617} 
+void {\bfseries status\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się komunikat statusu. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_ae79c149ee3b79304a530d9bfee0ddf35}\label{class_main_window_ae79c149ee3b79304a530d9bfee0ddf35} 
+void {\bfseries archived\+Stations\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się lista zapisanych stacji. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_window_a499dbd612e725f8d1a32bdab1b3c851f}\label{class_main_window_a499dbd612e725f8d1a32bdab1b3c851f} 
+void {\bfseries archived\+Data\+Loaded} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy dane archiwalne zostaną załadowane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_ad26de6668fdf645d615bca9c70ae87ea}{Main\+Window}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor obiektu \doxylink{class_main_window}{Main\+Window}. \end{DoxyCompactList}\item 
+QGeo\+Coordinate \mbox{\hyperlink{class_main_window_a6575e57c45ed1f58b7e120038702800c}{map\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera centrum mapy. \end{DoxyCompactList}\item 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ \mbox{\hyperlink{class_main_window_aa80ede91c5fba3bb425182b63640cc4c}{stations}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera listę wyszukanych stacji. \end{DoxyCompactList}\item 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ \mbox{\hyperlink{class_main_window_aad9f21923284b6c0a58648ec61c53ed4}{all\+Stations}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera listę wszystkich stacji. \end{DoxyCompactList}\item 
+QVariant\+List \mbox{\hyperlink{class_main_window_a2af76fc67e7a019ff4a15e1760b87c2c}{sensors}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera listę sensorów. \end{DoxyCompactList}\item 
+QVariant\+Map \mbox{\hyperlink{class_main_window_ab569b8decf80c6f2922a7ab7d1edc68f}{sensor\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera dane sensorów. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_main_window_aa88f4d6f7467cbbc3fe3930697ada25f}{status}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera komunikat statusu. \end{DoxyCompactList}\item 
+QVariant\+List \mbox{\hyperlink{class_main_window_aa6c4d7a41d43f12ce95cbfcec97589d6}{archived\+Stations}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera listę zapisanych stacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_window_a17a3b377b5d1a720c55e991e9204090a}\label{class_main_window_a17a3b377b5d1a720c55e991e9204090a} 
+QGeo\+Coordinate {\bfseries map\+Center}
+\item 
+\Hypertarget{class_main_window_a652299072939b7190979b29426e4f9a0}\label{class_main_window_a652299072939b7190979b29426e4f9a0} 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ {\bfseries stations}
+\item 
+\Hypertarget{class_main_window_ab45720bbf7b75072353ddaa7112934f1}\label{class_main_window_ab45720bbf7b75072353ddaa7112934f1} 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ {\bfseries all\+Stations}
+\item 
+\Hypertarget{class_main_window_a8e3c2790fab23140b174eea542d9ea73}\label{class_main_window_a8e3c2790fab23140b174eea542d9ea73} 
+QVariant\+List {\bfseries sensors}
+\item 
+\Hypertarget{class_main_window_a0f3cefd08ce20662f411f28a4185eeaa}\label{class_main_window_a0f3cefd08ce20662f411f28a4185eeaa} 
+QVariant\+Map {\bfseries sensor\+Data}
+\item 
+\Hypertarget{class_main_window_a0f87209377d9aea8edec2169053b620e}\label{class_main_window_a0f87209377d9aea8edec2169053b620e} 
+QString {\bfseries status}
+\item 
+\Hypertarget{class_main_window_af8c6f94a7712d9146af1f1ff0598b7c3}\label{class_main_window_af8c6f94a7712d9146af1f1ff0598b7c3} 
+QVariant\+List {\bfseries archived\+Stations}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Główna klasa zarządzająca aplikacją monitorowania jakości powietrza. 
+
+Odpowiada za pobieranie danych z API, zarządzanie stacjami, sensorami i danymi archiwalnymi. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_ad26de6668fdf645d615bca9c70ae87ea}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ad26de6668fdf645d615bca9c70ae87ea} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor obiektu \doxylink{class_main_window}{Main\+Window}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Rodzic QObject.\\
+\hline
+{\em parent} & Rodzic QObject.\\
+\hline
+\end{DoxyParams}
+Inicjalizuje centrum mapy na Poznań, ustawia domyślny komunikat statusu i pobiera wszystkie stacje z API. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_aad9f21923284b6c0a58648ec61c53ed4}\index{MainWindow@{MainWindow}!allStations@{allStations}}
+\index{allStations@{allStations}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{allStations()}{allStations()}}
+{\footnotesize\ttfamily \label{class_main_window_aad9f21923284b6c0a58648ec61c53ed4} 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ Main\+Window\+::all\+Stations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera listę wszystkich stacji. 
+
+\begin{DoxyReturn}{Returns}
+Lista wszystkich stacji w formacie QQml\+List\+Property. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_aa6c4d7a41d43f12ce95cbfcec97589d6}\index{MainWindow@{MainWindow}!archivedStations@{archivedStations}}
+\index{archivedStations@{archivedStations}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{archivedStations()}{archivedStations()}}
+{\footnotesize\ttfamily \label{class_main_window_aa6c4d7a41d43f12ce95cbfcec97589d6} 
+QVariant\+List Main\+Window\+::archived\+Stations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera listę zapisanych stacji. 
+
+\begin{DoxyReturn}{Returns}
+Lista zapisanych stacji jako QVariant\+List. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_a26f6552f8ca9950cf81c21df6bf11e50}\index{MainWindow@{MainWindow}!fetchSensorData@{fetchSensorData}}
+\index{fetchSensorData@{fetchSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{fetchSensorData}{fetchSensorData}}
+{\footnotesize\ttfamily \label{class_main_window_a26f6552f8ca9950cf81c21df6bf11e50} 
+void Main\+Window\+::fetch\+Sensor\+Data (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Pobiera dane dla sensora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & Identyfikator sensora.\\
+\hline
+{\em sensor\+Id} & Identyfikator sensora.\\
+\hline
+\end{DoxyParams}
+Wysyła żądanie do API GIOŚ w celu pobrania danych dla określonego sensora. \Hypertarget{class_main_window_a837ddfe5aeaffc3064f27d40da64c8fe}\index{MainWindow@{MainWindow}!fetchSensors@{fetchSensors}}
+\index{fetchSensors@{fetchSensors}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{fetchSensors}{fetchSensors}}
+{\footnotesize\ttfamily \label{class_main_window_a837ddfe5aeaffc3064f27d40da64c8fe} 
+void Main\+Window\+::fetch\+Sensors (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Pobiera sensory dla stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji.\\
+\hline
+{\em station\+Id} & Identyfikator stacji.\\
+\hline
+\end{DoxyParams}
+Wysyła żądanie do API GIOŚ w celu pobrania sensorów dla danej stacji. \Hypertarget{class_main_window_af251f1eaca28140864dbd1d76097411d}\index{MainWindow@{MainWindow}!loadArchivedStationData@{loadArchivedStationData}}
+\index{loadArchivedStationData@{loadArchivedStationData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadArchivedStationData}{loadArchivedStationData}}
+{\footnotesize\ttfamily \label{class_main_window_af251f1eaca28140864dbd1d76097411d} 
+void Main\+Window\+::load\+Archived\+Station\+Data (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{, }\item[{const QString \&}]{save\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ładuje zapisane dane stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em save\+Date} & Data zapisu.\\
+\hline
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em save\+Date} & Data zapisu.\\
+\hline
+\end{DoxyParams}
+Wyszukuje i ładuje dane stacji z pliku JSON na podstawie identyfikatora i daty zapisu. \Hypertarget{class_main_window_a6575e57c45ed1f58b7e120038702800c}\index{MainWindow@{MainWindow}!mapCenter@{mapCenter}}
+\index{mapCenter@{mapCenter}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{mapCenter()}{mapCenter()}}
+{\footnotesize\ttfamily \label{class_main_window_a6575e57c45ed1f58b7e120038702800c} 
+QGeo\+Coordinate Main\+Window\+::map\+Center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera centrum mapy. 
+
+\begin{DoxyReturn}{Returns}
+Współrzędne centrum mapy. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_a2923b075ce75e262c80f6051f2706faf}\index{MainWindow@{MainWindow}!removeSensorData@{removeSensorData}}
+\index{removeSensorData@{removeSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{removeSensorData}{removeSensorData}}
+{\footnotesize\ttfamily \label{class_main_window_a2923b075ce75e262c80f6051f2706faf} 
+void Main\+Window\+::remove\+Sensor\+Data (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Usuwa dane dla sensora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & Identyfikator sensora.\\
+\hline
+{\em sensor\+Id} & Identyfikator sensora.\\
+\hline
+\end{DoxyParams}
+Usuwa dane powiązane z określonym identyfikatorem sensora. \Hypertarget{class_main_window_a7d5e272770a8904d4671d22b56480bb8}\index{MainWindow@{MainWindow}!saveStationData@{saveStationData}}
+\index{saveStationData@{saveStationData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{saveStationData}{saveStationData}}
+{\footnotesize\ttfamily \label{class_main_window_a7d5e272770a8904d4671d22b56480bb8} 
+void Main\+Window\+::save\+Station\+Data (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{, }\item[{const QString \&}]{city\+Name}{, }\item[{const QString \&}]{address}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Zapisuje dane stacji. 
+
+Zapisuje dane stacji do pliku.
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em city\+Name} & Nazwa miasta. \\
+\hline
+{\em address} & Adres stacji.\\
+\hline
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em city\+Name} & Nazwa miasta. \\
+\hline
+{\em address} & Adres stacji.\\
+\hline
+\end{DoxyParams}
+Zapisuje dane stacji i sensorów do pliku JSON. \Hypertarget{class_main_window_a058bf5d971fa40743b9945f1fc455089}\index{MainWindow@{MainWindow}!searchCity@{searchCity}}
+\index{searchCity@{searchCity}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{searchCity}{searchCity}}
+{\footnotesize\ttfamily \label{class_main_window_a058bf5d971fa40743b9945f1fc455089} 
+void Main\+Window\+::search\+City (\begin{DoxyParamCaption}\item[{const QString \&}]{city}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Wyszukuje stacje w podanym mieście. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & Nazwa miasta.\\
+\hline
+{\em city} & Nazwa miasta do wyszukania.\\
+\hline
+\end{DoxyParams}
+Wysyła żądanie do API Nominatim w celu geokodowania miasta i aktualizuje centrum mapy. \Hypertarget{class_main_window_ab569b8decf80c6f2922a7ab7d1edc68f}\index{MainWindow@{MainWindow}!sensorData@{sensorData}}
+\index{sensorData@{sensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sensorData()}{sensorData()}}
+{\footnotesize\ttfamily \label{class_main_window_ab569b8decf80c6f2922a7ab7d1edc68f} 
+QVariant\+Map Main\+Window\+::sensor\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera dane sensorów. 
+
+\begin{DoxyReturn}{Returns}
+Mapa danych sensorów jako QVariant\+Map. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_a2af76fc67e7a019ff4a15e1760b87c2c}\index{MainWindow@{MainWindow}!sensors@{sensors}}
+\index{sensors@{sensors}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sensors()}{sensors()}}
+{\footnotesize\ttfamily \label{class_main_window_a2af76fc67e7a019ff4a15e1760b87c2c} 
+QVariant\+List Main\+Window\+::sensors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera listę sensorów. 
+
+\begin{DoxyReturn}{Returns}
+Lista sensorów jako QVariant\+List. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_aa80ede91c5fba3bb425182b63640cc4c}\index{MainWindow@{MainWindow}!stations@{stations}}
+\index{stations@{stations}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{stations()}{stations()}}
+{\footnotesize\ttfamily \label{class_main_window_aa80ede91c5fba3bb425182b63640cc4c} 
+QQml\+List\+Property$<$ \mbox{\hyperlink{class_station}{Station}} $>$ Main\+Window\+::stations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera listę wyszukanych stacji. 
+
+\begin{DoxyReturn}{Returns}
+Lista stacji w formacie QQml\+List\+Property. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_aa88f4d6f7467cbbc3fe3930697ada25f}\index{MainWindow@{MainWindow}!status@{status}}
+\index{status@{status}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily \label{class_main_window_aa88f4d6f7467cbbc3fe3930697ada25f} 
+QString Main\+Window\+::status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera komunikat statusu. 
+
+\begin{DoxyReturn}{Returns}
+Aktualny komunikat statusu. 
+\end{DoxyReturn}
+\Hypertarget{class_main_window_a55ec17a9466c8b0252b4d42f41768a2e}\index{MainWindow@{MainWindow}!updateStationSearchStatus@{updateStationSearchStatus}}
+\index{updateStationSearchStatus@{updateStationSearchStatus}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateStationSearchStatus}{updateStationSearchStatus}}
+{\footnotesize\ttfamily \label{class_main_window_a55ec17a9466c8b0252b4d42f41768a2e} 
+void Main\+Window\+::update\+Station\+Search\+Status (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{, }\item[{bool}]{is\+Searched}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Aktualizuje status wyszukiwania stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em is\+Searched} & Nowy status wyszukiwania.\\
+\hline
+{\em station\+Id} & Identyfikator stacji. \\
+\hline
+{\em is\+Searched} & Nowy status wyszukiwania.\\
+\hline
+\end{DoxyParams}
+Aktualizuje właściwość is\+Searched dla określonej stacji. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,213 @@
+\doxysection{Station Class Reference}
+\hypertarget{class_station}{}\label{class_station}\index{Station@{Station}}
+
+
+Reprezentuje stację monitorowania jakości powietrza.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_station_aee8aecf66868f2b08d6313c96c365fcd}\label{class_station_aee8aecf66868f2b08d6313c96c365fcd} 
+void {\bfseries is\+Searched\+Changed} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmieni się status wyszukiwania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_station_af331bb13e19b0be707a39c02098c531e}{Station}} (int id, QString name, QString city, QString addr, double latitude, double longitude, bool searched, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor obiektu \doxylink{class_station}{Station}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_station_a8ace076ecdd293f4d35e36b7ca0a36df}{station\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera identyfikator stacji. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_station_a34946c956136c470a9ff2c59876463e0}{station\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera nazwę stacji. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_station_a9579da76de19d80eaf28f25918e72751}{city\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera nazwę miasta. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_station_a373b9496e38a840d3a6b29a7edd0c8ed}{address}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera adres stacji. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_station_a1fbac6659d1a48842ccc1b6cd219ad24}{lat}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera szerokość geograficzną. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_station_aebaccfdecc660336dc04e73eb8fc431c}{lon}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera długość geograficzną. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_station_aae2f4aef050414efd11adde24fe79280}{is\+Searched}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera status wyszukiwania. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_station_a720e930e244a237b3ec4cfbd6c7a68cb}{set\+Is\+Searched}} (bool searched)
+\begin{DoxyCompactList}\small\item\em Ustawia status wyszukiwania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_station_a4a3c01364e65b6796eb3888ad7453107}\label{class_station_a4a3c01364e65b6796eb3888ad7453107} 
+int {\bfseries station\+Id}
+\item 
+\Hypertarget{class_station_a63d71a1a5b27d56480945a37481d81c6}\label{class_station_a63d71a1a5b27d56480945a37481d81c6} 
+QString {\bfseries station\+Name}
+\item 
+\Hypertarget{class_station_af73f4a524d457b6e40184567bd2248ad}\label{class_station_af73f4a524d457b6e40184567bd2248ad} 
+QString {\bfseries city\+Name}
+\item 
+\Hypertarget{class_station_a6bef24b489d4d4f4d28363116687f6a7}\label{class_station_a6bef24b489d4d4f4d28363116687f6a7} 
+QString {\bfseries address}
+\item 
+\Hypertarget{class_station_ac81d0930184d2377b2bd42f4fcc175cc}\label{class_station_ac81d0930184d2377b2bd42f4fcc175cc} 
+double {\bfseries lat}
+\item 
+\Hypertarget{class_station_aac2e0cc376c0d46a7379fdaf2290273d}\label{class_station_aac2e0cc376c0d46a7379fdaf2290273d} 
+double {\bfseries lon}
+\item 
+\Hypertarget{class_station_acf8f05e8d0b8f3b30ebb96f39011b7d9}\label{class_station_acf8f05e8d0b8f3b30ebb96f39011b7d9} 
+bool {\bfseries is\+Searched}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezentuje stację monitorowania jakości powietrza. 
+
+Ta klasa przechowuje właściwości stacji, takie jak jej identyfikator, nazwa, lokalizacja i status wyszukiwania. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_station_af331bb13e19b0be707a39c02098c531e}\index{Station@{Station}!Station@{Station}}
+\index{Station@{Station}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{Station()}{Station()}}
+{\footnotesize\ttfamily \label{class_station_af331bb13e19b0be707a39c02098c531e} 
+Station\+::\+Station (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{QString}]{name}{, }\item[{QString}]{city}{, }\item[{QString}]{addr}{, }\item[{double}]{latitude}{, }\item[{double}]{longitude}{, }\item[{bool}]{searched}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor obiektu \doxylink{class_station}{Station}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identyfikator stacji. \\
+\hline
+{\em name} & Nazwa stacji. \\
+\hline
+{\em city} & Nazwa miasta. \\
+\hline
+{\em addr} & Adres stacji. \\
+\hline
+{\em latitude} & Współrzędna szerokości geograficznej. \\
+\hline
+{\em longitude} & Współrzędna długości geograficznej. \\
+\hline
+{\em searched} & Status wyszukiwania. \\
+\hline
+{\em parent} & Rodzic QObject. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_station_a373b9496e38a840d3a6b29a7edd0c8ed}\index{Station@{Station}!address@{address}}
+\index{address@{address}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{address()}{address()}}
+{\footnotesize\ttfamily \label{class_station_a373b9496e38a840d3a6b29a7edd0c8ed} 
+QString Station\+::address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera adres stacji. 
+
+\begin{DoxyReturn}{Returns}
+Adres stacji. 
+\end{DoxyReturn}
+\Hypertarget{class_station_a9579da76de19d80eaf28f25918e72751}\index{Station@{Station}!cityName@{cityName}}
+\index{cityName@{cityName}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{cityName()}{cityName()}}
+{\footnotesize\ttfamily \label{class_station_a9579da76de19d80eaf28f25918e72751} 
+QString Station\+::city\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera nazwę miasta. 
+
+\begin{DoxyReturn}{Returns}
+Nazwa miasta. 
+\end{DoxyReturn}
+\Hypertarget{class_station_aae2f4aef050414efd11adde24fe79280}\index{Station@{Station}!isSearched@{isSearched}}
+\index{isSearched@{isSearched}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{isSearched()}{isSearched()}}
+{\footnotesize\ttfamily \label{class_station_aae2f4aef050414efd11adde24fe79280} 
+bool Station\+::is\+Searched (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera status wyszukiwania. 
+
+\begin{DoxyReturn}{Returns}
+True, jeśli stacja jest oznaczona jako wyszukana. 
+\end{DoxyReturn}
+\Hypertarget{class_station_a1fbac6659d1a48842ccc1b6cd219ad24}\index{Station@{Station}!lat@{lat}}
+\index{lat@{lat}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{lat()}{lat()}}
+{\footnotesize\ttfamily \label{class_station_a1fbac6659d1a48842ccc1b6cd219ad24} 
+double Station\+::lat (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera szerokość geograficzną. 
+
+\begin{DoxyReturn}{Returns}
+Współrzędna szerokości geograficznej. 
+\end{DoxyReturn}
+\Hypertarget{class_station_aebaccfdecc660336dc04e73eb8fc431c}\index{Station@{Station}!lon@{lon}}
+\index{lon@{lon}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{lon()}{lon()}}
+{\footnotesize\ttfamily \label{class_station_aebaccfdecc660336dc04e73eb8fc431c} 
+double Station\+::lon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera długość geograficzną. 
+
+\begin{DoxyReturn}{Returns}
+Współrzędna długości geograficznej. 
+\end{DoxyReturn}
+\Hypertarget{class_station_a720e930e244a237b3ec4cfbd6c7a68cb}\index{Station@{Station}!setIsSearched@{setIsSearched}}
+\index{setIsSearched@{setIsSearched}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{setIsSearched()}{setIsSearched()}}
+{\footnotesize\ttfamily \label{class_station_a720e930e244a237b3ec4cfbd6c7a68cb} 
+void Station\+::set\+Is\+Searched (\begin{DoxyParamCaption}\item[{bool}]{searched}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ustawia status wyszukiwania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em searched} & Nowy status wyszukiwania. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_station_a8ace076ecdd293f4d35e36b7ca0a36df}\index{Station@{Station}!stationId@{stationId}}
+\index{stationId@{stationId}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{stationId()}{stationId()}}
+{\footnotesize\ttfamily \label{class_station_a8ace076ecdd293f4d35e36b7ca0a36df} 
+int Station\+::station\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera identyfikator stacji. 
+
+\begin{DoxyReturn}{Returns}
+Identyfikator stacji. 
+\end{DoxyReturn}
+\Hypertarget{class_station_a34946c956136c470a9ff2c59876463e0}\index{Station@{Station}!stationName@{stationName}}
+\index{stationName@{stationName}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{stationName()}{stationName()}}
+{\footnotesize\ttfamily \label{class_station_a34946c956136c470a9ff2c59876463e0} 
+QString Station\+::station\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera nazwę stacji. 
+
+\begin{DoxyReturn}{Returns}
+Nazwa stacji. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\end{DoxyCompactItemize}

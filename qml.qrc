@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>StationDialog.qml</file>
+        <file>ArchivedDataDialog.qml</file>
+        <file>ArchivedStationDialog.qml</file>
+    </qresource>
+</RCC>

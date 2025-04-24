@@ -1,0 +1,154 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QGeoCoordinate>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QQmlListProperty>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_station_af331bb13e19b0be707a39c02098c531e}{Station}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00031\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ stationId\ READ\ stationId\ CONSTANT)}
+\DoxyCodeLine{00032\ \ \ \ \ Q\_PROPERTY(QString\ stationName\ READ\ stationName\ CONSTANT)}
+\DoxyCodeLine{00033\ \ \ \ \ Q\_PROPERTY(QString\ cityName\ READ\ cityName\ CONSTANT)}
+\DoxyCodeLine{00034\ \ \ \ \ Q\_PROPERTY(QString\ address\ READ\ address\ CONSTANT)}
+\DoxyCodeLine{00035\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ lat\ READ\ lat\ CONSTANT)}
+\DoxyCodeLine{00036\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ lon\ READ\ lon\ CONSTANT)}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ isSearched\ READ\ isSearched\ NOTIFY\ \mbox{\hyperlink{class_station_aee8aecf66868f2b08d6313c96c365fcd}{isSearchedChanged}})}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_station_af331bb13e19b0be707a39c02098c531e}{Station}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ QString\ name,\ QString\ city,\ QString\ addr,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude,\ \textcolor{keywordtype}{bool}\ searched,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ :\ QObject(parent),\ m\_stationId(id),\ m\_stationName(name),\ m\_cityName(city),\ m\_address(addr),\ m\_lat(latitude),\ m\_lon(longitude),\ m\_isSearched(searched)\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_station_a8ace076ecdd293f4d35e36b7ca0a36df}{stationId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_stationId;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ QString\ \mbox{\hyperlink{class_station_a34946c956136c470a9ff2c59876463e0}{stationName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_stationName;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ QString\ \mbox{\hyperlink{class_station_a9579da76de19d80eaf28f25918e72751}{cityName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_cityName;\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ QString\ \mbox{\hyperlink{class_station_a373b9496e38a840d3a6b29a7edd0c8ed}{address}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_address;\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_station_a1fbac6659d1a48842ccc1b6cd219ad24}{lat}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_lat;\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_station_aebaccfdecc660336dc04e73eb8fc431c}{lon}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_lon;\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_station_aae2f4aef050414efd11adde24fe79280}{isSearched}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_isSearched;\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_station_a720e930e244a237b3ec4cfbd6c7a68cb}{setIsSearched}}(\textcolor{keywordtype}{bool}\ searched)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isSearched\ !=\ searched)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ m\_isSearched\ =\ searched;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_station_aee8aecf66868f2b08d6313c96c365fcd}{isSearchedChanged}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ signals:}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_station_aee8aecf66868f2b08d6313c96c365fcd}{isSearchedChanged}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_stationId;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ QString\ m\_stationName;\ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ QString\ m\_cityName;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ QString\ m\_address;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_lat;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_lon;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isSearched;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window_ad26de6668fdf645d615bca9c70ae87ea}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00131\ \ \ \ \ Q\_PROPERTY(QGeoCoordinate\ mapCenter\ READ\ mapCenter\ NOTIFY\ \mbox{\hyperlink{class_main_window_aa00fe0a808c5ba84089e2147bf1e18af}{mapCenterChanged}})}
+\DoxyCodeLine{00132\ \ \ \ \ Q\_PROPERTY(QQmlListProperty<Station>\ stations\ READ\ stations\ NOTIFY\ \mbox{\hyperlink{class_main_window_ad6d230c53c3628833a80896fa729c06a}{stationsChanged}})}
+\DoxyCodeLine{00133\ \ \ \ \ Q\_PROPERTY(QQmlListProperty<Station>\ allStations\ READ\ allStations\ NOTIFY\ \mbox{\hyperlink{class_main_window_ac5153bb04c8a2e0f6b585e3f8ba77b88}{allStationsChanged}})}
+\DoxyCodeLine{00134\ \ \ \ \ Q\_PROPERTY(QVariantList\ sensors\ READ\ sensors\ NOTIFY\ \mbox{\hyperlink{class_main_window_a91c4b769235bc0aafc20ad7b2fb2a1e3}{sensorsChanged}})}
+\DoxyCodeLine{00135\ \ \ \ \ Q\_PROPERTY(QVariantMap\ sensorData\ READ\ sensorData\ NOTIFY\ \mbox{\hyperlink{class_main_window_a0820b479930b8cf09badc3a8bf25618f}{sensorDataChanged}})}
+\DoxyCodeLine{00136\ \ \ \ \ Q\_PROPERTY(QString\ status\ READ\ status\ NOTIFY\ \mbox{\hyperlink{class_main_window_af63d0bdd203b1b2d04bb90c96493f617}{statusChanged}})}
+\DoxyCodeLine{00137\ \ \ \ \ Q\_PROPERTY(QVariantList\ archivedStations\ READ\ archivedStations\ NOTIFY\ \mbox{\hyperlink{class_main_window_ae79c149ee3b79304a530d9bfee0ddf35}{archivedStationsChanged}})}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window_ad26de6668fdf645d615bca9c70ae87ea}{MainWindow}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \ \ QGeoCoordinate\ \mbox{\hyperlink{class_main_window_a6575e57c45ed1f58b7e120038702800c}{mapCenter}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_mapCenter;\ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ QQmlListProperty<Station>\ \mbox{\hyperlink{class_main_window_aa80ede91c5fba3bb425182b63640cc4c}{stations}}()\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QQmlListProperty<Station>(\textcolor{keyword}{this},\ \&m\_stations);}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ QQmlListProperty<Station>\ \mbox{\hyperlink{class_main_window_aad9f21923284b6c0a58648ec61c53ed4}{allStations}}()\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QQmlListProperty<Station>(\textcolor{keyword}{this},\ \&m\_allStations);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00172\ \ \ \ \ QVariantList\ \mbox{\hyperlink{class_main_window_a2af76fc67e7a019ff4a15e1760b87c2c}{sensors}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_sensors;\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00178\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_main_window_ab569b8decf80c6f2922a7ab7d1edc68f}{sensorData}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_sensorData;\ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \ \ \ \ QString\ \mbox{\hyperlink{class_main_window_aa88f4d6f7467cbbc3fe3930697ada25f}{status}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_status;\ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00190\ \ \ \ \ QVariantList\ \mbox{\hyperlink{class_main_window_aa6c4d7a41d43f12ce95cbfcec97589d6}{archivedStations}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_archivedStations;\ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a058bf5d971fa40743b9945f1fc455089}{searchCity}}(\textcolor{keyword}{const}\ QString\ \&city);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a837ddfe5aeaffc3064f27d40da64c8fe}{fetchSensors}}(\textcolor{keywordtype}{int}\ stationId);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a26f6552f8ca9950cf81c21df6bf11e50}{fetchSensorData}}(\textcolor{keywordtype}{int}\ sensorId);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a55ec17a9466c8b0252b4d42f41768a2e}{updateStationSearchStatus}}(\textcolor{keywordtype}{int}\ stationId,\ \textcolor{keywordtype}{bool}\ isSearched);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a2923b075ce75e262c80f6051f2706faf}{removeSensorData}}(\textcolor{keywordtype}{int}\ sensorId);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7d5e272770a8904d4671d22b56480bb8}{saveStationData}}(\textcolor{keywordtype}{int}\ stationId,\ \textcolor{keyword}{const}\ QString\ \&cityName,\ \textcolor{keyword}{const}\ QString\ \&address);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af251f1eaca28140864dbd1d76097411d}{loadArchivedStationData}}(\textcolor{keywordtype}{int}\ stationId,\ \textcolor{keyword}{const}\ QString\ \&saveDate);}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ onGeocodeReply(QNetworkReply\ *reply,\ \textcolor{keyword}{const}\ QString\ \&searchedCity);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ onStationsReply(QNetworkReply\ *reply);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ onSensorsReply(QNetworkReply\ *reply);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ onSensorDataReply(QNetworkReply\ *reply,\ \textcolor{keywordtype}{int}\ sensorId);}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ loadArchivedStations();}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ QGeoCoordinate\ m\_mapCenter;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ \ \ QList<Station*>\ m\_stations;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00274\ \ \ \ \ QList<Station*>\ m\_allStations;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \ \ QVariantList\ m\_sensors;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00276\ \ \ \ \ QVariantMap\ m\_sensorData;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00277\ \ \ \ \ QString\ m\_status;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00278\ \ \ \ \ QVariantList\ m\_archivedStations;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00279\ \ \ \ \ QNetworkAccessManager\ *m\_networkManager;\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ signals:}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa00fe0a808c5ba84089e2147bf1e18af}{mapCenterChanged}}();}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad6d230c53c3628833a80896fa729c06a}{stationsChanged}}();}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ac5153bb04c8a2e0f6b585e3f8ba77b88}{allStationsChanged}}();}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a91c4b769235bc0aafc20ad7b2fb2a1e3}{sensorsChanged}}();}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0820b479930b8cf09badc3a8bf25618f}{sensorDataChanged}}();}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af63d0bdd203b1b2d04bb90c96493f617}{statusChanged}}();}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae79c149ee3b79304a530d9bfee0ddf35}{archivedStationsChanged}}();}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a499dbd612e725f8d1a32bdab1b3c851f}{archivedDataLoaded}}();}
+\DoxyCodeLine{00321\ \};}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
